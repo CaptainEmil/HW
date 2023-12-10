@@ -1,20 +1,11 @@
-const as=document.querySelectorAll('a');
+const btn=document.querySelector('button');
+let cnt=10;
 
-function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  
-  function randomRGB() {
-    return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
-  }
-  
-
-as.forEach(a => {
-    a.addEventListener('mouseover', (e)=>{
-        console.log('works');
-        e.target.style.color=randomRGB();
+for(let i=1;i<=10;++i){
+    btn.addEventListener('click',()=>{
+        if(i<=cnt)console.log(i);
+        if(i===cnt) {
+            cnt=parseInt(prompt('Enter the number from 1 till 10'));
+        }
     });
-    a.addEventListener('click', (e)=>{
-        e.preventDefault();
-    });
-});
+}
