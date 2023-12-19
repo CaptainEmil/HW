@@ -1,6 +1,6 @@
 const input=document.querySelector('input');
 
 input.addEventListener("input",(e)=>{
-    const re=/^[0-2][0-4]:[0-5][0-9]$/;
+    const re=/(?=.*[a-z])(?=.*\d)(?=.*[A-Z])(?=.*[@#$%&_])(?=.*[!?.,])(?=.*^.{8,16}$)/;
     console.log(re.test(e.target.value));
 });
